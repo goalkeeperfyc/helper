@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 19 00:57:16 2018
+
+@author: fangyucheng
+"""
+
+def cal(pro):
+    one = 20000
+    two = 20000
+    three = 20000
+    four = 20000
+    five = 20000
+    after_five_year = one*pow((1+pro), 5) + two*pow((1+pro), 4) + three*pow((1+pro), 3) + four*pow((1+pro), 2) + five*pow((1+pro), 1)
+    the_6th = (after_five_year - 20000) * (1 + pro)
+    money = (the_6th - 20000) * (1 + pro)
+    for line in range(8, 16):
+        money = (money - 8640) * (1 + pro)
+        print("current money in bank is %s year: %s" % (money, line))
+    return money
+
+def plan(pro):
+    the_6th = 20000 * (1 + pro)
+    money = (the_6th + 20000) * (1 + pro)
+    for line in range(8, 16):
+        money = (money + 8640) * (1 + pro)
+        print("current money in bank is %s year: %s" % (money, line))
+    return money
+
+if __name__ == '__main__':
+    retrieve_money = 40000 + 8640*9
+    result = cal(0.04)
+    bank = retrieve_money + result
+    print("money in bank is %s" % bank)
+    result2 = plan(0.04)
+    print("money in lier is %s" % result2)

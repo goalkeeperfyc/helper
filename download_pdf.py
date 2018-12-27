@@ -3,7 +3,12 @@
 """
 Created on Sat Dec 15 12:46:00 2018
 
+Introduction
+input pdf's url and locate absolute path,
+program will download it auto
+
 @author: fangyucheng
+yxf321@miami.edu
 """
 
 import argparse
@@ -31,7 +36,6 @@ def download(url, file_path):
     urllib.request.install_opener(opener)
     urllib.request.urlretrieve(url, file_name)
     print('download %s successfully' % file_name)
-
 
 
 for url in URL_LIST:
